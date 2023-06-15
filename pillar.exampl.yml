@@ -1,0 +1,9 @@
+---
+cribl-edge:
+  lookup:
+    package:
+      archive:
+        source: https://FQDN/<PATH_TO_CRIBL-EDGE_ARCHIVE_FILE>.tgz
+        source_hash: source_hash_url_or_value
+      install_path: <FILESYSTEM_INSTALL_LOCATION>
+...
