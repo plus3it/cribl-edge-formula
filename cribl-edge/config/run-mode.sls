@@ -7,10 +7,11 @@
 include:
   - {{ sls_package_install }}
 
-cribl-edge Set Run-mode:
+Cribl-Edge Set Run-mode:
   cmd.run:
     - name: '{{ cribl_edge.package.install_path }}/bin/cribl mode-edge'
     - require:
       - archive: 'Cribl-Edge Archive Extracted'
+      - file: 'Cribl-Edge Symlink to OS Log-Dir'
     - onlyif:
       - [[ $( /opt/cribl-edge/bin/cribl status ) == "Cribl is not running" ]]

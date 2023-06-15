@@ -9,20 +9,20 @@ include:
   - {{ sls_package_install }}
   - {{ sls_package_runmode }}
 
-cribl-edge Configure systemd:
+Cribl-Edge Configure systemd Unit:
   cmd.run:
     - name: '{{ cribl_edge.package.install_path }}/bin/cribl boot-start enable -m systemd'
     - require:
       - archive: 'Cribl-Edge Archive Extracted'
-      - cmd: 'cribl-edge Set Run-mode'
+      - cmd: 'Cribl-Edge Set Run-mode'
     - unless:
       - '[[ $( systemctl is-enabled cribl-edge.service ) == "enabled" ]]'
 
-cribl-edge Start systemd Unit:
+Cribl-Edge Start systemd Unit:
   service.running:
     - enable: True
-    - name: 'cribl-edge.service'
+    - name: 'Cribl-Edge.service'
     - require:
-      - cmd: cribl-edge Set-up systemd Unit
+      - cmd: 'Cribl-Edge Configure systemd Unit'
     - unless:
       - '[[ $( systemctl is-active cribl-edge.service ) == "active" ]]'
