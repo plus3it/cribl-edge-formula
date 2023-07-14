@@ -7,3 +7,15 @@ Cribl-Edge Service Dead:
   service.dead:
     - name: {{ cribl_edge.service.name }}
     - enable: False
+
+Cribl-Edge Delete Unit-File:
+  file.absent:
+    - name: {{ cribl_edge.service.unit_file }}
+    - onchanges:
+      - service: Cribl-Edge Service Dead
+
+Cribl-Edge Clean-Reload:
+  module.run:
+    - name: service.systemctl_reload
+    - onchanges:
+      - file: Cribl-Edge Delete Unit-File
