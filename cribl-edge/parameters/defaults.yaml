@@ -1,0 +1,9 @@
+# Set default values.
+---
+values:
+  package:
+    install_path: /opt/cribl-edge
+    archive:
+      source:
+      source_hash:
+...
