@@ -24,5 +24,3 @@ Cribl-Edge Start systemd Unit:
     - name: '{{ cribl_edge.service.name }}'
     - require:
       - cmd: 'Cribl-Edge Configure systemd Unit'
-    - unless:
-      - '[[ $( systemctl is-active {{ cribl_edge.service.name }} ) == "active" ]]'
