@@ -14,4 +14,4 @@ Cribl-Edge Set Run-mode:
       - archive: 'Cribl-Edge Archive Extracted'
       - file: 'Cribl-Edge Symlink to OS Log-Dir'
     - onlyif:
-      - [[ $( /opt/cribl-edge/bin/cribl status ) == "Cribl is not running" ]]
+      - '[[ $( {{ cribl_edge.package.install_path }}/bin/cribl status ) == "Cribl is not running" ]]'
