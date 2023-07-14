@@ -6,4 +6,7 @@ values:
     archive:
       source: https://cdn.cribl.io/dl/4.1.3/cribl-4.1.3-15457782-linux-x64.tgz
       source_hash: https://cdn.cribl.io/dl/4.1.3/cribl-4.1.3-15457782-linux-x64.tgz.sha256
+
+  service:
+    name: cribl-edge.service
 ...

@@ -16,13 +16,13 @@ Cribl-Edge Configure systemd Unit:
       - archive: 'Cribl-Edge Archive Extracted'
       - cmd: 'Cribl-Edge Set Run-mode'
     - unless:
-      - '[[ $( systemctl is-enabled cribl-edge.service ) == "enabled" ]]'
+      - '[[ $( systemctl is-enabled {{ cribl_edge.service.name }} ) == "enabled" ]]'
 
 Cribl-Edge Start systemd Unit:
   service.running:
     - enable: True
-    - name: 'cribl-edge.service'
+    - name: '{{ cribl_edge.service.name }}'
     - require:
       - cmd: 'Cribl-Edge Configure systemd Unit'
     - unless:
-      - '[[ $( systemctl is-active cribl-edge.service ) == "active" ]]'
+      - '[[ $( systemctl is-active {{ cribl_edge.service.name }} ) == "active" ]]'
