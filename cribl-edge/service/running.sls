@@ -21,7 +21,7 @@ Cribl-Edge Configure systemd Unit:
 Cribl-Edge Start systemd Unit:
   service.running:
     - enable: True
-    - name: 'Cribl-Edge.service'
+    - name: 'cribl-edge.service'
     - require:
       - cmd: 'Cribl-Edge Configure systemd Unit'
     - unless:
