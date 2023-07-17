@@ -6,8 +6,6 @@
 Cribl-Edge App-Dir Removed:
   file.absent:
     - name: {{ cribl_edge.package.install_path }}
-    - onlyif:
-      - '[[ -d {{ cribl_edge.package.install_path }} ]]'
 
 Cribl-Edge Log-Dir Removed:
   file.absent:
