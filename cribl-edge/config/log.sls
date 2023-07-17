@@ -19,7 +19,7 @@ Cribl-Edge OS Log-Dir Setup:
   file.directory:
     - group: 'root'
     - mode: '0700'
-    - name: '/var/log/cribl-edge'
+    - name: '{{ cribl_edge.package.real_log_dir }}'
     - require:
       - archive: 'Cribl-Edge Archive Extracted'
     - selinux:
@@ -36,5 +36,5 @@ Cribl-Edge Symlink to OS Log-Dir:
     - name: '{{ cribl_edge.package.install_path }}/log'
     - require:
       - file: 'Cribl-Edge Nuke Default Log-Dir'
-    - target: '/var/log/cribl-edge'
+    - target: '{{ cribl_edge.package.real_log_dir }}'
     - user: 'root'
