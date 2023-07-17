@@ -5,12 +5,12 @@
 
 Cribl-Edge App-Dir Removed:
   file.absent:
-    - name: {{cribl_edge.package.install_path }}
+    - name: {{ cribl_edge.package.install_path }}
     - onlyif:
-      - '[[ -d {{cribl_edge.package.install_path }} ]]'
+      - '[[ -d {{ cribl_edge.package.install_path }} ]]'
 
 Cribl-Edge Log-Dir Removed:
   file.absent:
-    - name: {{cribl_edge.package.real_log_dir }}
+    - name: {{ cribl_edge.package.real_log_dir }}
     - onchanges:
       - file: Cribl-Edge App-Dir Removed
