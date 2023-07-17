@@ -1,0 +1,14 @@
+---
+cribl-edge:
+  lookup:
+    package:
+      archive:
+        source: https://FQDN/<PATH_TO_CRIBL-EDGE_ARCHIVE_FILE>.tgz
+        source_hash: source_hash_url_or_value
+      install_path: <FILESYSTEM_INSTALL_LOCATION>
+    real_log_dir: /var/log/cribl-edge
+
+  service:
+    name: cribl-edge.service
+    unit_file: /etc/systemd/system/cribl-edge.service
+...

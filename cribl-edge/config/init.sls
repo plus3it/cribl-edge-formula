@@ -1,0 +1,3 @@
+include:
+  - .log
+  - .run-mode
